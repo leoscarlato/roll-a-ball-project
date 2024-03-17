@@ -23,10 +23,8 @@ public class PlayerController : MonoBehaviour
  // UI text component to display count of "PickUp" objects collected.
  public TextMeshProUGUI countText;
 
- // UI object to display winning text.
- public GameObject winTextObject;
-
- public float rotationSpeed = 100.0f; // Velocidade de rotação ajustável no Inspetor
+  // Velocidade de rotação ajustável no Inspetor
+ public float rotationSpeed = 100.0f;
 
 
  // Start is called before the first frame update.
@@ -40,9 +38,6 @@ public class PlayerController : MonoBehaviour
 
  // Update the count display.
         SetCountText();
-
- // Initially set the win text to be inactive.
-        winTextObject.SetActive(false);
     }
  
  // This function is called when a move input is detected.
@@ -91,13 +86,13 @@ private void FixedUpdate()
  void SetCountText() 
     {
  // Update the count text with the current count.
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Moedas coletadas: " + count.ToString();
 
- // Check if the count has reached or exceeded the win condition.
- if (count >= 6)
-        {
- // Display the win text.
-            winTextObject.SetActive(true);
-        }
+//  // Check if the count has reached or exceeded the win condition.
+//  if (count >= 6)
+//         {
+//  // Display the win text.
+//             winTextObject.SetActive(true);
+//         }
     }
 }
