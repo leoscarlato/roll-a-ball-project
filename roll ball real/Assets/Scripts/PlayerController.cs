@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
  // UI object to display winning text.
  public GameObject winTextObject;
 
+ public float rotationSpeed = 100.0f; // Velocidade de rotação ajustável no Inspetor
+
+
  // Start is called before the first frame update.
  void Start()
     {
@@ -54,14 +57,18 @@ public class PlayerController : MonoBehaviour
     }
 
  // FixedUpdate is called once per fixed frame-rate frame.
- private void FixedUpdate() 
-    {
- // Create a 3D movement vector using the X and Y inputs.
-        Vector3 movement = new Vector3 (movementX, 0.0f, movementY);
+private void FixedUpdate() 
+{
+    Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
- // Apply force to the Rigidbody to move the player.
-        rb.AddForce(movement * speed); 
+    rb.AddForce(movement * speed); 
+
+    if (movement.magnitude > 0.1) // Certifique-se de que há movimento significativo antes de rotacionar
+    {
+        Quaternion newRotation = Quaternion.LookRotation(movement);
+        rb.rotation = Quaternion.Slerp(rb.rotation, newRotation, rotationSpeed * Time.fixedDeltaTime);
     }
+}
 
  
  void OnTriggerEnter(Collider other) 
