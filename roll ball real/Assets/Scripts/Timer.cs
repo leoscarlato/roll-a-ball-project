@@ -44,4 +44,9 @@ public class Timer : MonoBehaviour
         // Para garantir que a exibição seja atualizada imediatamente ao adicionar tempo
         UpdateTimerDisplay();
     }
+    public void ResetTimeToTwoMinutes(){
+    timeLeft = 120.0f;
+    UpdateTimerDisplay();
+    }
+
 }
