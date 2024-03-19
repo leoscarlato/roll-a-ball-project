@@ -7,6 +7,7 @@ using TMPro;
 using System.Linq; 
 using UnityEngine.SceneManagement;
 
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
@@ -24,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI livesText;
 
     public Timer timer;
+    public AudioSource audioSource;
+    public AudioClip pick;
+    public AudioClip damage;
 
     void Start()
     {
@@ -75,6 +79,9 @@ public class PlayerController : MonoBehaviour
          other.gameObject.SetActive(false);
          count += 1;
          SetCountText();
+         audioSource.clip = pick;
+         audioSource.Play();
+
          if (timer != null)
          {
                timer.AddTime(30.0f);
@@ -92,7 +99,8 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
          }
 
-
+         audioSource.clip = damage;
+         audioSource.Play();
          SetLivesText();
          timer.ResetTimeToTwoMinutes();
          ResetGame();
