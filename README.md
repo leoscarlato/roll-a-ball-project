@@ -18,3 +18,5 @@ Pack Free Textures 2 (https://assetstore.unity.com/packages/2d/textures-material
 Yughues Free Ground Materials (https://assetstore.unity.com/packages/2d/textures-materials/floors/yughues-free-...)
 
 Pirate Coin (https://assetstore.unity.com/packages/3d/props/pirate-coin-207743)
+
+**FEITO POR LEONARDO SCARLATO**
