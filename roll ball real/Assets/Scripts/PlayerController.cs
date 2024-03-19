@@ -97,6 +97,10 @@ public class PlayerController : MonoBehaviour
          timer.ResetTimeToTwoMinutes();
          ResetGame();
       }
+      else if (other.gameObject.CompareTag("Finish"))
+      {
+         SceneManager.LoadScene("WinScreen");
+      }
    }
 
 

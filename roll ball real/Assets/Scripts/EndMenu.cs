@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EndMenu : MonoBehaviour
 {
-    public void playGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    public void restartGame(){
+        SceneManager.LoadScene(1);
     }
 
-    public void quitGame(){
-        Application.Quit();
+    public void exitButton(){
+        SceneManager.LoadScene("MainMenu");
     }
 }
