@@ -6,12 +6,12 @@ public class CoinCollector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Timer timerScript = FindObjectOfType<Timer>(); // Encontra o script do timer na cena
+            Timer timerScript = FindObjectOfType<Timer>(); 
             if(timerScript != null) 
             {
-                timerScript.AddTime(30.0f); // Adiciona 30 segundos ao timer
+                timerScript.AddTime(30.0f); 
             }
-            Destroy(gameObject); // Destroi a moeda após ser coletada
+            Destroy(gameObject); 
         }
     }
 }
